@@ -4,173 +4,66 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>연우 — 고민 해결소</title>
-  
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="연우">
-  <link rel="manifest" href="manifest.json">
-
-  <!-- Tailwind CSS & Custom Styles -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
 </head>
-<body class="bg-[#FFF8F5] text-[#2C2724] antialiased">
+<body class="bg-[#FFF8F5] text-[#2C2724]">
 
   <div class="app-viewport">
-    <!-- Header -->
     <header class="sticky top-0 z-40 bg-[#FFF8F5]/90 backdrop-blur-md px-5 py-3.5 flex items-center justify-between border-b border-[#F7EAE1]">
       <div class="flex items-center gap-2.5">
-        <div class="w-9 h-9 rounded-2xl bg-[#FFE4D6] flex items-center justify-center text-lg shadow-sm">
-          🧸
-        </div>
+        <div class="w-9 h-9 rounded-2xl bg-[#FFE4D6] flex items-center justify-center text-lg shadow-sm">🧸</div>
         <div>
-          <div class="flex items-center gap-1.5">
-            <span class="font-bold text-base text-[#2C2724] tracking-tight">연우</span>
-            <span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[#FFEFE6] text-[#F97316]">고민해결소</span>
-          </div>
-          <span class="text-[10px] text-[#8C827A]">Buy Or Not</span>
+          <h1 class="font-bold text-base">연우 <span class="text-[10px] bg-[#FFEFE6] text-[#F97316] px-2 py-0.5 rounded-full">고민해결소</span></h1>
         </div>
       </div>
-
       <div class="flex items-center gap-2">
-        <button class="w-8 h-8 rounded-full bg-[#FFFFFF] border border-[#F2E5DC] flex items-center justify-center text-sm shadow-xs">
-          🔔
-        </button>
-        <button class="w-8 h-8 rounded-full bg-[#FFE4D6] flex items-center justify-center text-sm">
-          👤
-        </button>
+        <button class="w-8 h-8 rounded-full bg-[#FFFFFF] border border-[#F2E5DC] text-sm">🔔</button>
+        <button class="w-8 h-8 rounded-full bg-[#FFE4D6] text-sm">👤</button>
       </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="flex-1 p-5 space-y-5 pb-28">
-
-      <!-- Friendly Welcome Banner -->
-      <section class="p-4 rounded-3xl bg-gradient-to-r from-[#FFF0E6] to-[#FFF7ED] border border-[#FFE5D4] flex items-center gap-3.5 shadow-sm">
-        <div class="w-12 h-12 rounded-2xl bg-[#FFFFFF] flex items-center justify-center text-2xl shadow-xs flex-shrink-0">
-          🐰
-        </div>
-        <div class="space-y-0.5">
-          <span class="text-[11px] font-semibold text-[#F97316] flex items-center gap-1">
-            실시간 고민 해결소 ✨
-          </span>
-          <h2 class="text-sm font-bold text-[#2C2724] leading-snug">
-            안녕! 오늘 어떤 옷 고민 중이야?<br>
-            <span class="text-[#EA580C]">연우가 같이 봐줄게</span> 💕
-          </h2>
-        </div>
-      </section>
-
-      <!-- URL Input Box -->
-      <section class="space-y-2">
-        <div class="p-2 rounded-full bg-[#FFFFFF] border border-[#F0DFD5] shadow-sm flex items-center gap-2 pl-4">
-          <span class="text-sm">🔗</span>
-          <input type="text" id="targetUrlInput" placeholder="쇼핑몰 링크를 쏙 넣어줘..." 
-                 class="w-full text-xs bg-transparent text-[#2C2724] placeholder-[#A89E96] focus:outline-none">
-          <button onclick="askYeonwoo()" class="px-4 py-2.5 rounded-full bg-gradient-to-r from-[#F97316] to-[#FB923C] text-[#FFFFFF] font-bold text-xs shadow-sm hover:opacity-95 whitespace-nowrap active:scale-95 transition-transform">
-            물어보기 ✨
-          </button>
-        </div>
-        <div class="flex items-center justify-between px-2 text-[11px] text-[#8C827A]">
-          <span>🌸 사진이나 주소만 있으면 바로 OK!</span>
-          <button onclick="samplePreset()" class="hover:text-[#F97316] underline font-medium">예시 링크 넣어보기</button>
-        </div>
-      </section>
-
-      <!-- YeonWoo's Shopping Report -->
-      <section class="p-5 rounded-3xl bg-[#FFFFFF] border border-[#F2E5DC] shadow-sm space-y-4">
-        <div class="flex items-center justify-between">
-          <span class="text-xs font-bold text-[#2C2724] flex items-center gap-1.5">
-            <span class="w-2 h-2 rounded-full bg-[#F97316]"></span> 연우의 꼼꼼 쇼핑 리포트
-          </span>
-          <span class="text-[10px] text-[#A89E96] bg-[#FFF8F5] px-2 py-0.5 rounded-full border border-[#F2E5DC]">방금 완료</span>
-        </div>
-
-        <!-- Item Overview Card -->
-        <div class="p-3.5 rounded-2xl bg-[#FFF9F5] border border-[#F5E6DC] flex items-center gap-3">
-          <div class="w-14 h-14 rounded-xl bg-[#FFEBDD] flex items-center justify-center text-2xl flex-shrink-0">
-            🧶
-          </div>
-          <div class="flex-1 min-w-0">
-            <span class="text-[10px] font-semibold text-[#F97316]">오트밀 블렌드</span>
-            <h3 id="reportTitle" class="text-xs font-bold text-[#2C2724] truncate">마일드 케이블 라운드 니트</h3>
-            <div class="flex items-center gap-2 mt-0.5">
-              <span id="reportPrice" class="text-xs font-bold text-[#2C2724]">42,000원</span>
-              <span class="text-[10px] font-bold text-[#EF4444] bg-[#FEE2E2] px-1.5 py-0.2 rounded-md">12% 할인</span>
-            </div>
+    <main class="flex-1 p-5 md:p-10 max-w-4xl mx-auto w-full">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+        
+        <!-- Left: Input & Interaction -->
+        <div class="md:col-span-5 space-y-6">
+          <section class="p-4 rounded-3xl bg-gradient-to-r from-[#FFF0E6] to-[#FFF7ED] border border-[#FFE5D4]">
+            <h2 class="text-sm font-bold text-[#2C2724]">안녕! 오늘 어떤 옷 고민 중이야? 💕</h2>
+          </section>
+          
+          <div class="p-2 rounded-full bg-[#FFFFFF] border border-[#F0DFD5] flex items-center gap-2 pl-4">
+            <input type="text" id="targetUrlInput" placeholder="쇼핑몰 링크를 넣어줘..." class="w-full text-xs bg-transparent focus:outline-none">
+            <button onclick="askYeonwoo()" class="px-4 py-2.5 rounded-full bg-[#F97316] text-white font-bold text-xs">물어보기 ✨</button>
           </div>
         </div>
 
-        <!-- Gauge Bar Section -->
-        <div class="space-y-2 pt-1">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-bold text-[#2C2724] flex items-center gap-1">
-              ❤️ 연우의 추천 지수
-            </span>
-            <span id="scoreText" class="text-lg font-extrabold text-[#F97316]">
-              78<span class="text-xs font-medium text-[#8C827A]"> / 100점</span>
-            </span>
-          </div>
-
-          <!-- Cute Gauge Bar -->
-          <div class="cute-gauge-container">
-            <div id="cuteGaugeFill" class="cute-gauge-fill" style="width: 78%;"></div>
-          </div>
-
-          <div class="flex justify-between text-[10px] font-medium text-[#A89E96] px-1">
-            <span>고민 좀 더... 💭</span>
-            <span>완전 괜찮아! 🌸</span>
-            <span>당장 사자! 💖</span>
-          </div>
-        </div>
-
-        <!-- YeonWoo's Friendly Advice Bubble -->
-        <div class="p-3.5 rounded-2xl bg-[#FFF9F3] border border-[#F7E7D8] relative">
-          <div class="flex items-start gap-2.5">
-            <span class="text-lg">💬</span>
-            <div class="space-y-1">
-              <span class="text-[11px] font-bold text-[#D97706] block">연우의 한마디</span>
-              <p id="adviceComment" class="text-xs text-[#4A4036] leading-relaxed">
-                "이 니트, 지금 가진 <strong class="text-[#2C2724] font-semibold">베이지 와이드 슬랙스</strong>랑 찰떡궁합이야! 이번 달 쇼핑 예산도 넉넉하니 사도 후회 없을 것 같아 🐰"
+        <!-- Right: Report -->
+        <div class="md:col-span-7 space-y-4">
+          <section class="p-5 rounded-3xl bg-white border border-[#F2E5DC] shadow-sm">
+            <h3 class="text-xs font-bold mb-4">연우의 꼼꼼 쇼핑 리포트</h3>
+            <div id="reportContent" class="space-y-4">
+              <!-- Result Area -->
+              <div class="p-3.5 rounded-2xl bg-[#FFF9F5] border border-[#F5E6DC] flex items-center gap-3">
+                <div class="w-14 h-14 rounded-xl bg-[#FFEBDD] flex items-center justify-center text-2xl">🧶</div>
+                <div>
+                  <h4 id="reportTitle" class="text-xs font-bold">마일드 케이블 라운드 니트</h4>
+                  <p id="reportPrice" class="text-xs font-bold text-[#F97316]">42,000원</p>
+                </div>
+              </div>
+              
+              <div class="cute-gauge-container"><div id="cuteGaugeFill" class="cute-gauge-fill" style="width: 78%;"></div></div>
+              
+              <p id="adviceComment" class="text-xs text-[#4A4036] p-3 bg-[#FFF9F3] rounded-2xl border border-[#F7E7D8]">
+                "이 니트, 베이지 와이드 슬랙스랑 찰떡궁합이야! 사도 후회 없을 것 같아 🐰"
               </p>
             </div>
-          </div>
+          </section>
         </div>
-
-        <!-- Action Buttons -->
-        <div class="flex gap-2 pt-1">
-          <button onclick="saveToWishlist()" class="flex-1 py-3 rounded-2xl bg-[#854D0E] text-[#FFFFFF] font-bold text-xs shadow-sm hover:opacity-95 flex items-center justify-center gap-1.5 active:scale-95 transition-transform">
-            🛍️ 찜 목록에 담아두기
-          </button>
-          <button class="w-12 h-12 rounded-2xl bg-[#FFF3EB] border border-[#F2DFD3] flex items-center justify-center text-sm text-[#8C827A] hover:bg-[#FFE8DA]">
-            🔗
-          </button>
-        </div>
-      </section>
+      </div>
     </main>
-
-    <!-- Bottom Navigation Bar -->
-    <nav class="fixed bottom-0 left-0 right-0 max-w-[480px] mx-auto bg-[#FFF8F5]/95 backdrop-blur-md border-t border-[#F2E5DC] px-6 py-2.5 z-50 flex items-center justify-between">
-      <button class="flex flex-col items-center gap-1 text-[#F97316]">
-        <span class="text-lg">⚖️</span>
-        <span class="text-[10px] font-bold">살까말까</span>
-      </button>
-      <button class="flex flex-col items-center gap-1 text-[#A89E96] hover:text-[#2C2724]">
-        <span class="text-lg">👗</span>
-        <span class="text-[10px] font-medium">내 옷장</span>
-      </button>
-      <button class="flex flex-col items-center gap-1 text-[#A89E96] hover:text-[#2C2724]">
-        <span class="text-lg">🤍</span>
-        <span class="text-[10px] font-medium">찜한 옷</span>
-      </button>
-      <button class="flex flex-col items-center gap-1 text-[#A89E96] hover:text-[#2C2724]">
-        <span class="text-lg">⚙️</span>
-        <span class="text-[10px] font-medium">설정</span>
-      </button>
-    </nav>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
