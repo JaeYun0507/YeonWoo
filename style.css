@@ -1,280 +1,74 @@
 /* ==========================================================================
-   연우 (YeonWoo) — Tokenized Stylesheet (style.css v5.4)
-   Design System: Automated Editorial (Charcoal / Off-White & Amber)
+   연우 (YeonWoo) — 귀염뽀짝 & 담백한 감성 스타일시트 (style.css)
+   컨셉: 포근한 파스텔 톤, 둥글둥글한 라운드, 여유로운 여백
    ========================================================================== */
 
 :root {
-  /* Default: Dark Theme */
-  --bg-canvas: #121211;
-  --bg-surface-lowest: #0b0b0a;
-  --bg-surface: #181817;
-  --bg-surface-elevated: #222220;
-  --bg-surface-border: #2c2c29;
-  --bg-surface-border-strong: #3f3f3a;
-
-  /* Typography */
-  --text-primary: #eae3d2;
-  --text-secondary: #a39e93;
-  --text-tertiary: #6e6b63;
-  --text-inverse: #121211;
-
-  /* Brand Accents */
-  --accent-amber: #d4a373;
-  --accent-amber-hover: #c49262;
-  --accent-amber-subtle: rgba(212, 163, 115, 0.14);
-  --accent-cream: #eae3d2;
-
-  /* Semantic Verdict Tokens */
-  --status-pass-bg: #13241b;
-  --status-pass-border: #1e4231;
-  --status-pass-text: #4ade80;
-
-  --status-warn-bg: #291f14;
-  --status-warn-border: #4d3621;
-  --status-warn-text: #f59e0b;
-
-  --status-fail-bg: #2a1515;
-  --status-fail-border: #4f2121;
-  --status-fail-text: #f87171;
-
-  --status-info-bg: #1c1c1a;
-  --status-info-border: #33332f;
-  --status-info-text: #9ca3af;
-
-  /* Stick Bar Tokens */
-  --stick-buy-bg: linear-gradient(90deg, #c5925e 0%, #d4a373 100%);
-  --stick-buy-text: #121211;
-  --stick-pass-bg: #242422;
-  --stick-pass-text: #a39e93;
-  --stick-needle-color: #eae3d2;
-  --stick-needle-glow: rgba(234, 227, 210, 0.6);
-
-  /* Elevation Shadows */
-  --shadow-viewport: 0 0 50px rgba(0, 0, 0, 0.85);
-  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --bg-app: #FFF8F5;
+  --bg-card: #FFFFFF;
+  --text-main: #2C2724;
+  --text-muted: #8C827A;
+  --accent-peach: #F97316;
+  --accent-peach-light: #FFEAD9;
+  --border-soft: #F2E5DC;
 }
 
-[data-theme="light"] {
-  --bg-canvas: #f8f7f4;
-  --bg-surface-lowest: #edebe6;
-  --bg-surface: #ffffff;
-  --bg-surface-elevated: #f2f0eb;
-  --bg-surface-border: #e2ded5;
-  --bg-surface-border-strong: #c8c3b7;
-
-  /* Typography */
-  --text-primary: #1f1e1c;
-  --text-secondary: #5f5c55;
-  --text-tertiary: #8f8b80;
-  --text-inverse: #ffffff;
-
-  /* Brand Accents */
-  --accent-amber: #b87b3e;
-  --accent-amber-hover: #9c642c;
-  --accent-amber-subtle: rgba(184, 123, 62, 0.12);
-  --accent-cream: #f4ede2;
-
-  /* Semantic Verdict Tokens (High Contrast) */
-  --status-pass-bg: #eaf6ed;
-  --status-pass-border: #b8e2c4;
-  --status-pass-text: #166534;
-
-  --status-warn-bg: #fdf5ea;
-  --status-warn-border: #f8d7a6;
-  --status-warn-text: #b45309;
-
-  --status-fail-bg: #fdf0f0;
-  --status-fail-border: #f7bebe;
-  --status-fail-text: #b91c1c;
-
-  --status-info-bg: #f2f2ef;
-  --status-info-border: #dcdcd6;
-  --status-info-text: #4b5563;
-
-  /* Stick Bar Tokens */
-  --stick-buy-bg: linear-gradient(90deg, #b87b3e 0%, #d4a373 100%);
-  --stick-buy-text: #ffffff;
-  --stick-pass-bg: #e2ded5;
-  --stick-pass-text: #4b4841;
-  --stick-needle-color: #1f1e1c;
-  --stick-needle-glow: rgba(31, 30, 28, 0.4);
-
-  /* Elevation Shadows */
-  --shadow-viewport: 0 10px 40px rgba(0, 0, 0, 0.08);
-  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.05);
-}
-
-/* --------------------------------------------------------------------------
-   Base Reset & Layout
-   -------------------------------------------------------------------------- */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.2s ease;
+  letter-spacing: -0.015em;
 }
 
 body {
-  background-color: var(--bg-canvas);
-  color: var(--text-primary);
-  font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Segoe UI", Roboto, sans-serif;
-  letter-spacing: -0.015em;
-  line-height: 1.45;
+  background-color: var(--bg-app);
+  color: var(--text-main);
   overflow-x: hidden;
-}
-
-.font-mono-data {
-  font-family: "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
 }
 
 .app-viewport {
   max-width: 480px;
   min-height: 100vh;
   margin: 0 auto;
-  background-color: var(--bg-canvas);
+  background-color: var(--bg-app);
   position: relative;
-  box-shadow: var(--shadow-viewport);
+  box-shadow: 0 10px 40px rgba(180, 140, 120, 0.08);
   display: flex;
   flex-direction: column;
 }
 
-/* --------------------------------------------------------------------------
-   Hero Stick Bar Component
-   -------------------------------------------------------------------------- */
-.stick-bar-module {
-  position: relative;
+/* 귀여운 게이지 바 (Gauge Bar) */
+.cute-gauge-container {
   width: 100%;
-  height: 28px;
-  background-color: var(--bg-surface-lowest);
-  border: 1px solid var(--bg-surface-border);
-  border-radius: 6px;
-  overflow: hidden;
-  display: flex;
-}
-
-.stick-fill-buy {
-  background: var(--stick-buy-bg);
-  color: var(--stick-buy-text);
-  font-weight: 700;
-  font-size: 11px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.stick-fill-pass {
-  background-color: var(--stick-pass-bg);
-  color: var(--stick-pass-text);
-  font-weight: 700;
-  font-size: 11px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.stick-needle-indicator {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background-color: var(--stick-needle-color);
-  box-shadow: 0 0 8px var(--stick-needle-glow);
-  z-index: 10;
-  transition: left 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* --------------------------------------------------------------------------
-   3x3 Factor Metric Grid
-   -------------------------------------------------------------------------- */
-.factor-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-}
-
-.factor-card {
-  background-color: var(--bg-surface);
-  border: 1px solid var(--bg-surface-border);
-  border-radius: 6px;
-  padding: 8px 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 66px;
-}
-
-.factor-card:hover {
-  border-color: var(--bg-surface-border-strong);
-  background-color: var(--bg-surface-elevated);
-}
-
-/* --------------------------------------------------------------------------
-   WeeNote Editorial "My Style Reference" Module
-   -------------------------------------------------------------------------- */
-.style-ref-card {
-  background-color: var(--bg-surface);
-  border: 1px solid var(--bg-surface-border);
-  border-radius: 8px;
-  overflow: hidden;
-  transition: transform 0.2s ease, border-color 0.2s ease;
-}
-
-.style-ref-card:hover {
-  border-color: var(--bg-surface-border-strong);
-}
-
-.style-ref-tag {
-  display: inline-flex;
-  align-items: center;
-  padding: 2px 7px;
-  font-size: 10px;
-  font-weight: 500;
-  border-radius: 4px;
-  background-color: var(--bg-surface-elevated);
-  border: 1px solid var(--bg-surface-border);
-  color: var(--text-secondary);
-}
-
-.style-ref-quote {
-  border-left: 2px solid var(--accent-amber);
-  padding-left: 10px;
-  color: var(--text-secondary);
-  font-size: 11px;
-  line-height: 1.5;
-}
-
-/* --------------------------------------------------------------------------
-   Theme Switch Buttons
-   -------------------------------------------------------------------------- */
-.theme-switch-container {
-  display: inline-flex;
+  height: 18px;
+  background-color: #F5EAE3;
+  border-radius: 9999px;
   padding: 3px;
-  background-color: var(--bg-surface-lowest);
-  border: 1px solid var(--bg-surface-border);
-  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
 }
 
-.theme-switch-btn {
-  padding: 4px 10px;
-  font-size: 11px;
-  font-weight: 600;
-  border-radius: 5px;
-  color: var(--text-secondary);
-  background: transparent;
-  border: none;
-  cursor: pointer;
+.cute-gauge-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #F59E0B 0%, #F97316 50%, #EC4899 100%);
+  border-radius: 9999px;
+  transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 2px 6px rgba(249, 115, 22, 0.3);
 }
 
-.theme-switch-btn.active {
-  background-color: var(--bg-surface);
-  color: var(--text-primary);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+/* 터치 피드백 */
+button:active {
+  transform: scale(0.96);
+  transition: transform 0.1s ease;
+}
+
+/* 스크롤바 정돈 */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background: #E8DDD5;
+  border-radius: 9999px;
 }
