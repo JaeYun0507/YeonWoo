@@ -1,69 +1,23 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>연우 — 고민 해결소</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
-</head>
-<body class="bg-[#FFF8F5] text-[#2C2724]">
-
-  <div class="app-viewport">
-    <header class="sticky top-0 z-40 bg-[#FFF8F5]/90 backdrop-blur-md px-5 py-3.5 flex items-center justify-between border-b border-[#F7EAE1]">
-      <div class="flex items-center gap-2.5">
-        <div class="w-9 h-9 rounded-2xl bg-[#FFE4D6] flex items-center justify-center text-lg shadow-sm">🧸</div>
-        <div>
-          <h1 class="font-bold text-base">연우 <span class="text-[10px] bg-[#FFEFE6] text-[#F97316] px-2 py-0.5 rounded-full">고민해결소</span></h1>
-        </div>
-      </div>
-      <div class="flex items-center gap-2">
-        <button class="w-8 h-8 rounded-full bg-[#FFFFFF] border border-[#F2E5DC] text-sm">🔔</button>
-        <button class="w-8 h-8 rounded-full bg-[#FFE4D6] text-sm">👤</button>
-      </div>
-    </header>
-
-    <main class="flex-1 p-5 md:p-10 max-w-4xl mx-auto w-full">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-        
-        <!-- Left: Input & Interaction -->
-        <div class="md:col-span-5 space-y-6">
-          <section class="p-4 rounded-3xl bg-gradient-to-r from-[#FFF0E6] to-[#FFF7ED] border border-[#FFE5D4]">
-            <h2 class="text-sm font-bold text-[#2C2724]">안녕! 오늘 어떤 옷 고민 중이야? 💕</h2>
-          </section>
-          
-          <div class="p-2 rounded-full bg-[#FFFFFF] border border-[#F0DFD5] flex items-center gap-2 pl-4">
-            <input type="text" id="targetUrlInput" placeholder="쇼핑몰 링크를 넣어줘..." class="w-full text-xs bg-transparent focus:outline-none">
-            <button onclick="askYeonwoo()" class="px-4 py-2.5 rounded-full bg-[#F97316] text-white font-bold text-xs">물어보기 ✨</button>
-          </div>
-        </div>
-
-        <!-- Right: Report -->
-        <div class="md:col-span-7 space-y-4">
-          <section class="p-5 rounded-3xl bg-white border border-[#F2E5DC] shadow-sm">
-            <h3 class="text-xs font-bold mb-4">연우의 꼼꼼 쇼핑 리포트</h3>
-            <div id="reportContent" class="space-y-4">
-              <!-- Result Area -->
-              <div class="p-3.5 rounded-2xl bg-[#FFF9F5] border border-[#F5E6DC] flex items-center gap-3">
-                <div class="w-14 h-14 rounded-xl bg-[#FFEBDD] flex items-center justify-center text-2xl">🧶</div>
-                <div>
-                  <h4 id="reportTitle" class="text-xs font-bold">마일드 케이블 라운드 니트</h4>
-                  <p id="reportPrice" class="text-xs font-bold text-[#F97316]">42,000원</p>
-                </div>
-              </div>
-              
-              <div class="cute-gauge-container"><div id="cuteGaugeFill" class="cute-gauge-fill" style="width: 78%;"></div></div>
-              
-              <p id="adviceComment" class="text-xs text-[#4A4036] p-3 bg-[#FFF9F3] rounded-2xl border border-[#F7E7D8]">
-                "이 니트, 베이지 와이드 슬랙스랑 찰떡궁합이야! 사도 후회 없을 것 같아 🐰"
-              </p>
-            </div>
-          </section>
-        </div>
-      </div>
-    </main>
-  </div>
-  <script src="script.js"></script>
-</body>
-</html>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="연우"/>
+  <title>연우 (YeonWoo) — AI 쇼핑 고민해결사</title>
+  <!-- PWA & Favicon -->
+  <link rel="manifest" href="manifest.json"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐰</text></svg>"/>
+  <!-- Google Fonts & Material Symbols -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <!-- Tailwind CSS & Custom Config -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
