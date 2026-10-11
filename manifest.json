@@ -1,0 +1,24 @@
+{
+  "name": "연우 (YeonWoo)",
+  "short_name": "연우",
+  "description": "합리적 패션 소비 의사결정 보좌관 (살까요 말까요 100점 의사결정 엔진)",
+  "start_url": "/?source=pwa",
+  "display": "standalone",
+  "background_color": "#121211",
+  "theme_color": "#121211",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
