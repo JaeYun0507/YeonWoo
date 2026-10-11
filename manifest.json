@@ -4,21 +4,15 @@
   "description": "합리적 패션 소비 의사결정 보좌관 (살까요 말까요 100점 의사결정 엔진)",
   "start_url": "/?source=pwa",
   "display": "standalone",
-  "background_color": "#121211",
-  "theme_color": "#121211",
+  "background_color": "#fff8f5",
+  "theme_color": "#fff8f5",
   "orientation": "portrait",
   "icons": [
     {
-      "src": "icon.png",
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐰</text></svg>",
       "sizes": "192x192 512x512",
-      "type": "image/png",
+      "type": "image/svg+xml",
       "purpose": "any maskable"
-    },
-    {
-      "src": "icon.png",
-      "sizes": "180x180",
-      "type": "image/png",
-      "purpose": "any"
     }
   ]
 }
